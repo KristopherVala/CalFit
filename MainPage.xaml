@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileFitnessCalorieTracker.MainPage">
+
+    <StackLayout BackgroundColor="Aquamarine">
+        <Label Text="CalFit" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+               FontSize="60"
+               Margin="0,200,0,15"
+               TextColor="White"
+               > </Label>
+        
+        <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="ENTER" Clicked="HomePageButton"
+                BackgroundColor="White"
+                />
+        
+        <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="Register" Clicked="SignUp"
+                BackgroundColor="White"
+                
+                />
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileFitnessCalorieTracker.HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Profile" Clicked="profileButton"></ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <StackLayout BackgroundColor="Black">  
+        
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  >
+            <Label Text="CalFit" FontSize="35" TextColor="White"/>
+        </StackLayout>
+
+
+        <StackLayout BackgroundColor="Aquamarine">
+
+            <StackLayout BackgroundColor="Aquamarine" Padding="5" >  
+            <Label TextColor="Black" Text="Click 'Add Day' to start tracking and then click on the day to add a meal!"  HorizontalOptions="Start" x:Name="CaloriesLabel" FontSize="20" HorizontalTextAlignment="Center"/>
+            
+
+            </StackLayout>
+
+            <Grid Margin="10" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.07*"/>
+
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" BackgroundColor="#00ff7d" TextColor="White" Text="Add Day" FontSize="15" Margin="0" Padding="0" Clicked="addDay"></Button>
+
+                <ListView Grid.Row="1" Grid.Column="0" BackgroundColor="#c2ffe0" x:Name="DaysLister" ItemsSource="{Binding daysList}" >
+
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell Tapped="onSelected">
+                                <StackLayout Orientation="Vertical" Padding="5" >
+                                    <Label Text="{Binding dateEntered}" VerticalOptions="Center"  TextColor="Black" FontSize="15" HorizontalOptions="Center"/>
+                                    </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+
+
+                    </ListView.ItemTemplate>
+
+
+                </ListView>
+
+                <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#00ff7d" TextColor="White" Text="Details" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="0"></Label>
+
+
+
+                    <ListView Grid.Row="1" Grid.Column="1" BackgroundColor="#c2ffe0" x:Name="DaysListerRight" ItemsSource="{Binding daysList}" >
+
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                            <ViewCell Tapped="onSelectedMoreDetails">
+                                    <StackLayout Orientation="Vertical" Padding="5" >
+                                        <Label Text="More Details" VerticalOptions="Center"  TextColor="Black" FontSize="15" HorizontalOptions="Center"/>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+
+
+                        </ListView.ItemTemplate>
+
+
+
+
+                </ListView>
+                
+                
+                
+                
+                
+                
+            </Grid>
+        </StackLayout>
+        
+    </StackLayout>
+
+</ContentPage>

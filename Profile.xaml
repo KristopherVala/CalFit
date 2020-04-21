@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileFitnessCalorieTracker.Profile"
+             BackgroundColor="Aquamarine"
+
+             >
+
+   
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+
+
+            <StackLayout BackgroundColor="Black" >
+                <Label Text="CalFit" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
+
+
+            </StackLayout>
+            
+            
+      
+
+        <StackLayout   >
+
+
+
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+
+                    <Label  FontSize="50" TextColor="White">Profile Page</Label>
+
+                </StackLayout>
+
+
+                <Grid HorizontalOptions="CenterAndExpand" Margin="20,20,20,20">
+                    <Label Grid.Row="0" Grid.Column="0" >Name:</Label>
+                    <Label Text="{Binding name}" Grid.Row="0" Grid.Column="1"/>
+
+
+
+                    <Label Grid.Row="1" Grid.Column="0" >Age:</Label>
+                    <Label Text="{Binding age}" Grid.Row="1" Grid.Column="1"/>
+
+
+
+                    <Label Grid.Row="2" Grid.Column="0">Date Signed Up:</Label>
+                    <Label  Text="{Binding dateSignedUp}" Grid.Row="2" Grid.Column="1"/>
+
+
+                    <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="Back" Clicked="BackButton"
+                BackgroundColor="White"
+                Grid.Column="1"
+                Grid.Row="3"
+
+                />
+
+                </Grid>
+
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+
+</ContentPage>

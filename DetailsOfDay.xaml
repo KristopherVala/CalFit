@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileFitnessCalorieTracker.DetailsOfDay">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  >
+                <Label Text="CalFit" FontSize="35" TextColor="White"/>
+            </StackLayout>
+
+
+            <StackLayout BackgroundColor="Aquamarine">
+
+                <StackLayout BackgroundColor="Aquamarine" Padding="5" >
+                    <Label TextColor="Black" Text="Meal History"  HorizontalOptions="Center" x:Name="CaloriesLabel" FontSize="20" HorizontalTextAlignment="Center"/>
+
+
+                </StackLayout>
+
+                <Grid Margin="10" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.07*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" BackgroundColor="#00ff7d" TextColor="White" Text="Meal" FontSize="15" Margin="0" Padding="0" ></Button>
+
+                    <ListView Grid.Row="1" Grid.Column="0" BackgroundColor="#c2ffe0" x:Name="mealsLister" ItemsSource="{Binding searchedMeals}" >
+
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout Orientation="Vertical" Padding="5" >
+                                        <Label Text="{Binding nameOfMeal}" VerticalOptions="Center"  TextColor="Black" FontSize="15" HorizontalOptions="Center"/>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+
+
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+
+                    <Label Grid.Row="0" Grid.Column="1" BackgroundColor="#00ff7d" TextColor="White" Text="CALORIES" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="0"></Label>
+
+
+
+                    <ListView Grid.Row="1" Grid.Column="1" BackgroundColor="#c2ffe0" x:Name="mealsListerRight" ItemsSource="{Binding searchedMeals}" >
+
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout Orientation="Vertical" Padding="5" >
+                                        <Label Text="{Binding Calories}" VerticalOptions="Center"  TextColor="Black" FontSize="15" HorizontalOptions="Center"/>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+
+
+                        </ListView.ItemTemplate>
+
+
+
+
+                    </ListView>
+
+
+
+
+
+
+                </Grid>
+                <Label x:Name="totalLabel" BackgroundColor="#00ff7d" TextColor="White" Text="Total Calories" FontSize="25" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50,0,50,20"></Label>
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

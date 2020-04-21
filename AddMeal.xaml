@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileFitnessCalorieTracker.AddMeal"
+                          BackgroundColor="Aquamarine"
+
+             
+             >
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <StackLayout BackgroundColor="Black" >
+                <Label Text="CalFit" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
+
+
+            </StackLayout>
+
+
+
+        <StackLayout  Margin="50">
+
+
+            <Entry x:Name="searchEntry"  Placeholder="Food" PlaceholderColor="Olive" />
+
+             
+
+            <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="auto"/>
+
+                    </Grid.RowDefinitions>
+                    <ListView BackgroundColor="White" Grid.Row="0"
+                              Grid.ColumnSpan="2"
+                              x:Name="mealsLister" ItemsSource="{Binding deserial}" RowHeight="80">
+
+
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell Tapped="onTapped">
+                                    <StackLayout Orientation="Horizontal" Padding="10" >
+
+                                        <Grid>
+                                            
+                                      
+                                        <Label Text="{Binding nameOfMeal}" VerticalOptions="Center"  TextColor="Black" FontSize="15" HorizontalOptions="Start" Grid.Column="0"/>
+                                        <Label Text="{Binding Calories}" VerticalOptions="Start"  TextColor="Black" FontSize="15" HorizontalOptions="End" Padding="30,0,0,0" Grid.Column="1"/>
+                                        </Grid>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+
+
+
+                    </ListView>
+
+                    <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="Search" Clicked="SearchFood"
+                BackgroundColor="White"
+                    Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                />
+
+                    <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="Cancel" Clicked="Cancel"
+                BackgroundColor="White"
+                    Grid.Column="0"
+                            Grid.Row="2"
+                />
+            <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                Text="Submit" Clicked="onSelected"
+                BackgroundColor="White"
+                Grid.Column="1"
+                            Grid.Row="2"
+
+                />
+
+            </Grid>
+
+        </StackLayout>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+    
+</ContentPage>
